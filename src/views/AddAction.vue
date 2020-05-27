@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Add action</h1>
+    <h2>Add action</h2>
     <form action="" class="" @submit.prevent>
       <label for="name">Name:</label>
       <input

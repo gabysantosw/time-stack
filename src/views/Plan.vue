@@ -35,7 +35,6 @@ import { mapGetters, mapActions } from 'vuex';
 export default {
   name: 'Plan',
   created() {
-    console.log('Created hook');
     this.actions = this.actionsGetter;
     this.plan = this.planGetter;
     this.currentTime = new Date();
@@ -99,11 +98,6 @@ export default {
       let minutes = endTime.getMinutes();
       if (minutes < 10) minutes = `0${minutes}`;
       return `${endTime.getHours()}:${minutes}`;
-    }
-  },
-  watch: {
-    plan(newValue) {
-      console.log(`PLAN VIEW: ${newValue}`);
     }
   }
 };

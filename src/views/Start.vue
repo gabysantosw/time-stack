@@ -59,7 +59,6 @@ export default {
     updateTime() {
       this.currentTime = new Date();
       if (this.minutesPassed >= this.plan[this.currentAction].duration) {
-        console.log('ACTION completed');
         this.currentAction++;
         this.startTime = new Date();
         this.minutesPassed = 0;
@@ -68,7 +67,6 @@ export default {
           (this.currentTime.getTime() - this.startTime.getTime()) / 1000 / 60;
       }
       if (this.currentAction >= this.plan.length) {
-        console.log('PLAN completed');
         this.stackCompleted();
       } else {
         this.interval = requestAnimationFrame(this.updateTime);
@@ -98,16 +96,7 @@ export default {
     uncompletedActions() {
       let progress = [...this.plan];
       progress.splice(0, this.currentAction);
-      console.log(progress);
       return progress;
-    }
-  },
-  watch: {
-    plan(newValue) {
-      console.log(`START VIEW, plan: ${newValue}`);
-    },
-    currentAction(newValue) {
-      console.log(`START VIEW, currentAction: ${newValue}`);
     }
   }
 };
