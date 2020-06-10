@@ -1,0 +1,32 @@
+//////////// VARIABLES
+
+// === COLORBOOK
+$dark: hsl(170, 0, 10);
+$o-dark: hsla(170, 0, 10, .7);
+$light: hsl(170, 0, 98);
+$o-light: hsla(170, 0, 98, .5);
+
+$neutro: hsl(170, 0, 90);
+$accent: hsl(170, 0, 20);
+$invalid: hsl(0, 50, 50);
+
+$blue: hsl(200, 60, 85);
+$green: hsl(140, 60, 85);
+$red: hsl(345, 60, 85);
+$purple: hsl(275, 60, 85);
+$yellow: hsl(75, 60, 85);
+
+// === EFFECTS
+$main-radius: 0.25rem;
+$high-radius: 2rem;
+
+// === FONTS
+$monospace: Cousine, monospace;
+$sans-serif: 'Open Sans', sans-serif;
+
+// === SPACING
+$main-pad: 1em;
+
+// === SIZING
+$MIN_TOUCH_SIZE: 3rem;
+$NAV_HEIGHT: 3rem;

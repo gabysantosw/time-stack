@@ -1,90 +1,42 @@
 <template>
-  <div>
-    <h1>Add action</h1>
+  <section class="form-section">
+    <h2 class="visually-hidden">Add action</h2>
     <form action="" class="" @submit.prevent>
-      <label for="name">Name:</label>
-      <input
-        type="text"
-        name="name"
-        id="name"
-        class=""
-        ref="autofocus"
-        v-model="action.name"
-        required
-      />
+      <actionInputs :action="action" />
 
-      <label for="duration">
-        Duration: <span>{{ action.duration }}m</span></label
-      >
-      <input
-        type="range"
-        name="duration"
-        id="duration"
-        min="0.1"
-        max="3"
-        step="30"
-        v-model="action.duration"
-      />
-
-      <p>Color:</p>
-
-      <div>
-        <input
-          type="radio"
-          name="color"
-          id="huey"
-          value="huey"
-          v-model="action.color"
-        />
-        <label for="huey">Huey</label>
+      <div class="button-group">
+        <router-link to="/actions" class="button-group__cancel">
+          Cancel
+        </router-link>
+        <button
+          class="button button--form"
+          @click="addAction"
+          @keyup.enter="addAction"
+        >
+          Add action
+        </button>
       </div>
-
-      <div>
-        <input
-          type="radio"
-          name="color"
-          id="dewey"
-          value="dewey"
-          v-model="action.color"
-        />
-        <label for="dewey">Dewey</label>
-      </div>
-
-      <div>
-        <input
-          type="radio"
-          name="color"
-          id="louie"
-          value="louie"
-          v-model="action.color"
-        />
-        <label for="louie">Louie</label>
-      </div>
-
-      <router-link to="/actions">Cancel</router-link>
-      <button class="" @click="addAction" @keyup.enter="addAction">
-        Add action
-      </button>
     </form>
-  </div>
+  </section>
 </template>
 
 <script>
+import actionInputs from '@/components/actionInputs.vue';
 import { mapActions } from 'vuex';
 
 export default {
   name: 'AddAction',
+  components: {
+    actionInputs
+  },
   data() {
     return {
       action: {
         name: '',
-        duration: 0.1,
-        color: 'huey'
+        duration: 30,
+        color: 'blue'
       }
     };
-  },
-  mounted() {
-    this.$refs.autofocus.focus();
   },
   methods: {
     ...mapActions(['add_action']),

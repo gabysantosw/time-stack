@@ -9,8 +9,9 @@ import Start from '../views/Start.vue';
 Vue.use(VueRouter);
 
 const routes = [
+  { path: '/', redirect: '/stack' },
   {
-    path: '/',
+    path: '/stack',
     name: 'Plan',
     component: Plan
   },
@@ -41,7 +42,9 @@ const routes = [
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
-  routes
+  routes,
+  linkActiveClass: 'route--active',
+  linkExactActiveClass: ''
 });
 
 export default router;
