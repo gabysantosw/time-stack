@@ -16,7 +16,6 @@ export default new Vuex.Store({
       state.actions.splice(index, 1);
     },
     UPDATE_ACTION(state, { action, index }) {
-      console.log(action);
       state.actions.splice(index, 1, action);
     },
     ADD_TO_PLAN(state, action) {

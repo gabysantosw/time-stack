@@ -1,85 +1,34 @@
 <template>
-  <div>
-    <h1>Edit action</h1>
-
+  <section class="form-section">
+    <h2 class="visually-hidden">Edit action</h2>
+    <button class="danger-button" @click="deleteAction">
+      Delete action
+    </button>
     <form action="" class="" @submit.prevent>
-      <label for="name">Name:</label>
-      <input
-        type="text"
-        name="name"
-        id="name"
-        class=""
-        ref="autofocus"
-        v-model="action.name"
-        required
-      />
-
-      <label for="duration">
-        Duration: <span>{{ action.duration }}m</span>
-      </label>
-      <input
-        type="range"
-        name="duration"
-        id="duration"
-        min="30"
-        max="240"
-        step="30"
-        v-model="action.duration"
-      />
-
-      <p>Color:</p>
-
-      <div>
-        <input
-          type="radio"
-          name="color"
-          id="huey"
-          value="huey"
-          v-model="action.color"
-        />
-        <label for="huey">Huey</label>
+      <actionInputs :action="action" />
+      <div class="button-group">
+        <router-link to="/actions" class="button-group__cancel">
+          Cancel
+        </router-link>
+        <button class="button button--main" @click="updateAction">Done</button>
       </div>
-
-      <div>
-        <input
-          type="radio"
-          name="color"
-          id="dewey"
-          value="dewey"
-          v-model="action.color"
-        />
-        <label for="dewey">Dewey</label>
-      </div>
-
-      <div>
-        <input
-          type="radio"
-          name="color"
-          id="louie"
-          value="louie"
-          v-model="action.color"
-        />
-        <label for="louie">Louie</label>
-      </div>
-      <button class="" @click="deleteAction">Delete action</button>
-      <router-link to="/actions">Cancel</router-link>
-      <button class="" @click="updateAction">Done</button>
     </form>
-  </div>
+  </section>
 </template>
 
 <script>
+import actionInputs from '@/components/actionInputs.vue';
 import { mapGetters, mapActions } from 'vuex';
 
 export default {
   name: 'EditAction',
+  components: {
+    actionInputs
+  },
   created() {
     this.id = +this.$route.params.id;
     this.action = { ...this.actionByIdGetter(this.id) };
     if (this.action.name === undefined) this.$router.push({ name: 'Actions' });
-  },
-  mounted() {
-    this.$refs.autofocus.focus();
   },
   data() {
     return {
@@ -94,7 +43,6 @@ export default {
       this.$router.push({ name: 'Actions' });
     },
     updateAction() {
-      console.log(this.id);
       this.update_action({ action: this.action, index: this.id });
       this.$router.push({ name: 'Actions' });
     }
@@ -105,4 +53,15 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.danger-button {
+  position: absolute;
+  top: -3.25em;
+  right: 1em;
+  padding: 0.5em 1em;
+  border: 0.125rem solid $invalid;
+  border-radius: $main-radius;
+  background-color: $neutro;
+  color: $dark;
+}
+</style>

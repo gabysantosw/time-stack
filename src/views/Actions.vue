@@ -1,16 +1,29 @@
 <template>
-  <div>
-    <h1>Actions</h1>
+  <div class="actions">
+    <h1 class="heading">Actions</h1>
     <ul class="" v-if="actionsIsNotEmpty">
-      <li class="" v-for="(action, index) in actions" :key="index">
-        <span class="">{{ action.name }}</span>
-        <span class="">{{ action.duration }}</span>
-        <router-link :to="{ name: 'EditAction', params: { id: index } }">
+      <li
+        class="action"
+        v-for="(action, index) in actions"
+        :key="index"
+        :class="[handleColor(action.color)]"
+      >
+        <span class="action__name">{{ action.name }}</span>
+        <span class="action__duration">{{ action.duration }}m</span>
+        <router-link
+          :to="{ name: 'EditAction', params: { id: index } }"
+          class="action__edit"
+        >
           Edit
         </router-link>
       </li>
     </ul>
-    <router-link to="/actions/add">Add action</router-link>
+    <p class="actions__empty" v-else>
+      Create an action to stack
+    </p>
+    <router-link to="/actions/add" class="button button--main">
+      Add action
+    </router-link>
     <router-view />
   </div>
 </template>
@@ -28,6 +41,17 @@ export default {
       actions: []
     };
   },
+  methods: {
+    handleColor(color) {
+      return {
+        '--blue': color === 'blue' ? true : false,
+        '--green': color === 'green' ? true : false,
+        '--red': color === 'red' ? true : false,
+        '--purple': color === 'purple' ? true : false,
+        '--yellow': color === 'yellow' ? true : false
+      };
+    }
+  },
   computed: {
     ...mapGetters(['actionsGetter']),
     actionsIsNotEmpty() {
@@ -37,4 +61,25 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.actions {
+  width: 100%;
+  // ISSUE: always shows an scrollbar
+  // box-sizing: border-box;
+  // max-height: 100%;
+  // overflow-y: scroll;
+
+  padding: $main-pad;
+  margin-bottom: $NAV_HEIGHT;
+  background-color: $neutro;
+  color: $dark;
+
+  position: relative;
+
+  &__empty {
+    margin-bottom: 1em;
+    color: $o-dark;
+    text-align: center;
+  }
+}
+</style>
