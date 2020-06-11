@@ -15,13 +15,16 @@ Development:
 
 ## Current state
 
-### v0.1.2 - Bug fixes
-- [ ] Improve on large screens
-- [ ] Fix UI bugs on iOS
+### v0.1.3 - Use localStorage
+- [ ] Save state on localStorage
 
 ## Roadmap (upcoming)
 
 ## Timeline (releases)
+
+### v0.1.2 - Bug fixes
+- [x] Improve on large screens
+- [x] Fix UI bugs on iOS
 
 ### v0.1.1 - UI
 - [x] Implement base UI design
