@@ -17,14 +17,15 @@ Development:
 
 ### v0.1.3 - Use localStorage
 - [ ] Save state on localStorage
+- [ ] Improve layout on larger screens
 
 ## Roadmap (upcoming)
 
 ## Timeline (releases)
 
 ### v0.1.2 - Bug fixes
-- [x] Improve on large screens
-- [x] Fix UI bugs on iOS
+- [x] Improve UX on forms
+- [x] Fix UI bugs caused on iOS
 
 ### v0.1.1 - UI
 - [x] Implement base UI design
