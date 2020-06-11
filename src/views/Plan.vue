@@ -124,7 +124,7 @@ export default {
     getTotalDuration() {
       let total = 0;
       for (const action of this.plan) {
-        total += action.duration;
+        total += Number(action.duration);
       }
       return total;
     },

@@ -15,12 +15,16 @@ Development:
 
 ## Current state
 
-### v0.1.1 - UI
-- [ ] Implement base UI design
+### v0.1.2 - Bug fixes
+- [ ] Improve on large screens
+- [ ] Fix UI bugs on iOS
 
 ## Roadmap (upcoming)
 
 ## Timeline (releases)
+
+### v0.1.1 - UI
+- [x] Implement base UI design
 
 ### v0.1.0 - MVP
 - [x] Add actions

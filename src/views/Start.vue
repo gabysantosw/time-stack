@@ -192,6 +192,8 @@ export default {
     border: 1em solid $accent;
 
     overflow: hidden;
+    backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
 
     position: relative;
 
