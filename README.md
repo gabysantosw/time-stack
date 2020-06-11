@@ -20,7 +20,7 @@ Development:
 
 ## Timeline (releases)
 
-### v0.1.3 - Use localStorage
+### v0.1.3 - UI improvements & localStorage
 - [x] Save state on localStorage
 - [x] Improve layout on larger screens
 
