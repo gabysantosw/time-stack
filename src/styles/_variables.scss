@@ -30,3 +30,14 @@ $main-pad: 1em;
 // === SIZING
 $MIN_TOUCH_SIZE: 3rem;
 $NAV_HEIGHT: 3rem;
+$MAX_WIDTH: 40rem;
+$INNER_WIDTH: 28rem;
+
+// === UTILS
+$tablet: 25rem;
+
+@mixin for-tablets {
+  @media (min-width: $tablet) {
+    @content;
+  }
+}

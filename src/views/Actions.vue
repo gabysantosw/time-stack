@@ -1,7 +1,7 @@
 <template>
   <div class="actions">
     <h1 class="heading">Actions</h1>
-    <ul class="" v-if="actionsIsNotEmpty">
+    <ul class="actions__list" v-if="actionsIsNotEmpty">
       <li
         class="action"
         v-for="(action, index) in actions"
@@ -22,7 +22,7 @@
       Create an action to stack
     </p>
     <router-link to="/actions/add" class="button button--main">
-      Add action
+      New action
     </router-link>
     <router-view />
   </div>
@@ -63,18 +63,25 @@ export default {
 
 <style lang="scss">
 .actions {
-  width: 100%;
   // ISSUE: always shows an scrollbar
   // box-sizing: border-box;
   // max-height: 100%;
   // overflow-y: scroll;
 
+  box-sizing: border-box;
+  width: 100%;
   padding: $main-pad;
   margin-bottom: $NAV_HEIGHT;
   background-color: $neutro;
   color: $dark;
 
   position: relative;
+
+  &__list {
+    margin: 0 auto;
+    width: $INNER_WIDTH;
+    max-width: 100%;
+  }
 
   &__empty {
     margin-bottom: 1em;

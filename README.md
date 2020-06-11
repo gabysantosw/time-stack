@@ -15,13 +15,14 @@ Development:
 
 ## Current state
 
-### v0.1.3 - Use localStorage
-- [ ] Save state on localStorage
-- [ ] Improve layout on larger screens
 
 ## Roadmap (upcoming)
 
 ## Timeline (releases)
+
+### v0.1.3 - Use localStorage
+- [x] Save state on localStorage
+- [x] Improve layout on larger screens
 
 ### v0.1.2 - Bug fixes
 - [x] Improve UX on forms

@@ -37,7 +37,7 @@
       </router-link>
     </section>
     <aside class="aside">
-      <h2 class="aside__heading">Actions</h2>
+      <h2 class="aside__heading">Add action</h2>
       <ul class="" v-if="actionsIsNotEmpty">
         <li
           class="side-action"
@@ -52,7 +52,7 @@
         </li>
       </ul>
       <router-link to="/actions/add" class="button button--aside">
-        Add action
+        New action
       </router-link>
     </aside>
   </div>
@@ -172,7 +172,8 @@ export default {
 
 .aside {
   flex-shrink: 0;
-  width: 6rem;
+  min-width: 6rem;
+  width: 30%;
   padding: 1em 0.5em;
   background-color: $neutro;
   color: $o-dark;
@@ -280,6 +281,7 @@ export default {
     display: block;
     margin-bottom: 0.5em;
     font-size: 0.875rem;
+    text-align: left;
   }
 
   &__duration {
@@ -288,12 +290,5 @@ export default {
     font-family: $monospace;
     font-size: 1rem;
   }
-}
-
-.button--start {
-  display: block;
-  position: fixed;
-  width: 6rem;
-  bottom: #{1rem + $NAV_HEIGHT};
 }
 </style>

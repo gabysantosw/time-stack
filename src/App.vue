@@ -51,6 +51,9 @@ export default {
 }
 
 .app {
+  margin: 0 auto;
+  width: $MAX_WIDTH;
+  max-width: 100%;
   min-height: var(--fullHeight);
   display: flex;
   align-items: stretch;
@@ -62,7 +65,9 @@ export default {
   position: fixed;
   bottom: 0;
 
-  width: 100%;
+  margin: 0 auto;
+  width: $MAX_WIDTH;
+  max-width: 100%;
   overflow: hidden;
 
   &__list {

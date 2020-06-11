@@ -78,6 +78,13 @@ body {
     font-size: .75rem;
     margin-bottom: 1em;
   }
+
+  &--start {
+    display: block;
+    position: fixed;
+    width: 9rem;
+    bottom: #{1rem + $NAV_HEIGHT};
+  }
 }
 
 .form-section {
@@ -87,6 +94,7 @@ body {
   top: 3.5rem;
   bottom: 0;
 
+  box-sizing: border-box;
   padding: 1em;
   border-bottom: #{0.125rem + $NAV_HEIGHT} solid $neutro;
   background-color: $light;
@@ -170,4 +178,10 @@ body {
     text-transform: uppercase;
     text-decoration: none;
   }
+}
+
+.form-section {
+  margin: 0 auto;
+  width: $INNER_WIDTH;
+  max-width: 100%;
 }

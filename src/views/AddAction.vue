@@ -13,7 +13,7 @@
           @click="addAction"
           @keyup.enter="addAction"
         >
-          Add action
+          Create
         </button>
       </div>
     </form>

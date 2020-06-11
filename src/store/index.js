@@ -3,7 +3,21 @@ import Vuex from 'vuex';
 
 Vue.use(Vuex);
 
+function saveLocallyPlugin(store) {
+  let current = JSON.parse(localStorage.getItem('localState'));
+  if (current) store.replaceState(current);
+
+  store.subscribe((mutation, state) => {
+    const localState = {
+      actions: state.actions,
+      plan: state.plan
+    };
+    localStorage.setItem('localState', JSON.stringify(localState));
+  });
+}
+
 export default new Vuex.Store({
+  plugins: [saveLocallyPlugin],
   state: {
     actions: [],
     plan: []

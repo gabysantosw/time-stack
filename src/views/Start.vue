@@ -154,8 +154,11 @@ export default {
 
 <style lang="scss">
 .start {
-  width: 100%;
+  box-sizing: border-box;
+  width: $INNER_WIDTH;
+  max-width: 100%;
   padding: $main-pad;
+  margin: 0 auto;
 
   display: flex;
   flex-direction: column;
