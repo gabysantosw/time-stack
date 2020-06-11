@@ -100,7 +100,10 @@ export default {
     }
   },
   mounted() {
-    this.$refs.autofocus.focus();
+    // only autofocus on add action
+    if (this.$route.name === 'AddAction') {
+      this.$refs.autofocus.focus();
+    }
   }
 };
 </script>
